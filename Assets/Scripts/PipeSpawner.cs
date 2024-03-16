@@ -9,7 +9,7 @@ public class PipeSpawner : MonoBehaviour
     [SerializeField] float timeValue = 2f;
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -20,8 +20,11 @@ public class PipeSpawner : MonoBehaviour
         }
         else
         {
-            Instantiate(pepi, new Vector3(transform.position.x, Random.Range(-1, 3), 0), transform.rotation);
-            timer = 0f;
+            if (Logic.IsLive)
+            {
+                Instantiate(pepi, new Vector3(transform.position.x, Random.Range(-1, 3), 0), transform.rotation);
+                timer = 0f;
+            }
         }
     }
 }

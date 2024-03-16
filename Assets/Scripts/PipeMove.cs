@@ -12,6 +12,13 @@ public class PipeMove : MonoBehaviour
 
     void Update()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        if (Logic.IsLive)
+        {
+            transform.position += Vector3.left * speed * Time.deltaTime;
+        }
+        else
+        {
+            speed = 0;
+        }
     }
 }
