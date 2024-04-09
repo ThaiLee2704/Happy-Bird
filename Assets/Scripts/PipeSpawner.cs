@@ -20,7 +20,7 @@ public class PipeSpawner : MonoBehaviour
         }
         else
         {
-            if (Logic.IsLive)
+            if (Logic.Instance.IsLive)
             {
                 Instantiate(pepi, new Vector3(transform.position.x, Random.Range(-1, 3), 0), transform.rotation);
                 timer = 0f;

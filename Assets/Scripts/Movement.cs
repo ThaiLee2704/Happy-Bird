@@ -6,10 +6,12 @@ public class Movement : MonoBehaviour
 {
     Rigidbody2D rb;
     [SerializeField] float strenght = 5f;
+    public Logic logic;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<Logic>();
     }
     void Update()
     {
@@ -21,4 +23,9 @@ public class Movement : MonoBehaviour
             }
         }
     }
+    void OnCollisionEnter2D(Collision2D orther)
+    {
+        logic.gameOver();
+    }
+    
 }
