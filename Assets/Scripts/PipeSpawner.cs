@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PipeSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject pepi;
+    [SerializeField] GameObject pipe;
     [SerializeField] float timer = 0f;
     [SerializeField] float timeValue = 2f;
     void Start()
@@ -22,7 +23,7 @@ public class PipeSpawner : MonoBehaviour
         {
             if (Logic.Instance.IsLive)
             {
-                Instantiate(pepi, new Vector3(transform.position.x, Random.Range(-1, 3), 0), transform.rotation);
+                Instantiate(pipe, new Vector3(transform.position.x, Random.Range(-1, 3), 0), transform.rotation);
                 timer = 0f;
             }
         }
